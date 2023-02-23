@@ -53,5 +53,7 @@ body {
     .section-container {
         flex-direction: row;
     }
-    
+    .left-column {
+        max-width: 467px;
+    }
 }
