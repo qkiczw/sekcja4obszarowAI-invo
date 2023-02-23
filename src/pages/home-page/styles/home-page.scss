@@ -26,8 +26,8 @@ body {
 .section-container {
     width: 100%;
     height: 100vh;
-    // display: flex;
-    // flex-direction: column;
+    display: flex;
+    flex-direction: column;
     color: inherit;
     padding: 0 16px;
 }
@@ -47,4 +47,11 @@ body {
         font-weight: regular;
         margin-top: 16px;
     }
+}
+
+@media (min-width: 1024px) {
+    .section-container {
+        flex-direction: row;
+    }
+    
 }
