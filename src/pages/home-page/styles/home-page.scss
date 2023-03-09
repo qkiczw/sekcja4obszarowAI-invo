@@ -17,6 +17,10 @@ $secondary-background-color: #FFFFFF;
 $boxBackground: #272D42;
 $iconBackground : #373155;
 
+// Fonts
+$fontMedium : 500;
+$fontRegular : 400;
+
 body {
     font-family: 'DM Sans', sans-serif;
     color: $secondary-background-color;
@@ -39,13 +43,13 @@ body {
         font-size: 32px;
         line-height: 40px;
         letter-spacing: -0.2;
-        font-weight: 500;
+        font-weight: $fontMedium;
     }
     &__text {
         color: $secondary-background-color;
         line-height: 24px;
         letter-spacing: 0;
-        font-weight: regular;
+        font-weight: $fontRegular;
         margin-top: 16px;
     }
 }
@@ -58,17 +62,23 @@ body {
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            gap: 16px;
             max-width: 100%;
             height: 196px;
             border-radius: 20px;
             background-color: $boxBackground;
 
-            .icon{
+            &__icon{
                 width: 28px;
                 height: 28px;
                 // chyba trzeba icon dac w container żeby dostać bacground z border radius
                 border-radius: 14px;
                 background-color: $iconBackground;
+            }
+            &__title {
+                font-size: 20px;
+                line-height: 24px;
+                font-weight: 500;
             }
         }
     }
@@ -91,7 +101,7 @@ body {
         &__text {
            
             line-height: 24px;
-            font-weight: regular;
+            font-weight: $fontMedium;
             margin-top: 16px;
         }
     }
