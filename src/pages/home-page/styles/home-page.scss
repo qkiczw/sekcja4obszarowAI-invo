@@ -14,7 +14,8 @@
 // Colors
 $primary-backogrund-color: #0F162D;
 $secondary-background-color: #FFFFFF;
-
+$boxBackground: #272D42;
+$iconBackground : #373155;
 
 body {
     font-family: 'DM Sans', sans-serif;
@@ -22,6 +23,7 @@ body {
     background-color: $primary-backogrund-color;
     color: $secondary-background-color;
     font-size: 16px;
+
 }
 .section-container {
     width: 100%;
@@ -47,8 +49,32 @@ body {
         margin-top: 16px;
     }
 }
+.right-column {
+    .boxes {
+        margin-top: 24px;
+        
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
+            height: 196px;
+            border-radius: 20px;
+            background-color: $boxBackground;
 
-@media (min-width: 1024px) {
+            .icon{
+                width: 28px;
+                height: 28px;
+                // chyba trzeba icon dac w container żeby dostać bacground z border radius
+                border-radius: 14px;
+                background-color: $iconBackground;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
     .section {
         padding: 159px 152px;
     }
@@ -60,14 +86,13 @@ body {
         &__title {
             font-size: 48px;
             line-height:56px;
-            letter-spacing: -0.2;
             font-weight: 500;
         }
         &__text {
            
             line-height: 24px;
             font-weight: regular;
-            margin-top: 18px;
+            margin-top: 16px;
         }
     }
 }
