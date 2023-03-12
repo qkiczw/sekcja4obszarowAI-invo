@@ -22,11 +22,17 @@
 $primary-backogrund-color: #0F162D;
 $secondary-background-color: #FFFFFF;
 $boxBackground: #272D42;
-$iconBackground : #373155;
+$boxFontColor: #5D6171;
+$icon01Background : hsl(281, 100%, 67%, .2);
+$icon02Background : hsl(233, 100%, 71%, .2);
+$icon03Background : hsl(180, 100%, 58%, .2);
+$icon04Background : hsl(57, 100%, 58%, .2);
+
+
 
 // Fonts
 $fontMedium : 500;
-$fontRegular : 400;
+$fontRegular : 300;
 
 body {
     font-family: 'DM Sans', sans-serif;
@@ -82,15 +88,25 @@ body {
     height: 196px;
     border-radius: 20px;
     background-color: $boxBackground;
-    
+
+    &--01 > .box__icon {
+        background-color: $icon01Background;
+    }
+    &--02 > .box__icon {
+        background-color: $icon02Background;
+    }
+    &--03 > .box__icon {
+        background-color: $icon03Background;
+    }
+    &--04 > .box__icon {
+        background-color: $icon04Background;
+    }
 
     &__icon{
         @include flexCenterXandY;
         width: 56px;
         height: 56px;
-        // chyba trzeba icon dac w container żeby dostać bacground z border radius
         border-radius: 14px;
-        background-color: $iconBackground;
     }
     &__title {
         font-size: 20px;
@@ -101,6 +117,9 @@ body {
     &__text {
         text-align: center;
         color: $secondary-background-color;
+        font-size: 14px;
+        line-height: 22px;
+        opacity: .5;
     }
 }
 
@@ -124,7 +143,6 @@ body {
         &__text {
            
             line-height: 24px;
-            font-weight: $fontMedium;
             margin-top: 16px;
         }
     }
@@ -157,6 +175,7 @@ body {
         }
     }
     .box {
+        padding: 24px;
         max-width: 268px;
         height: 240px;
     }
