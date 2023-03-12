@@ -11,6 +11,13 @@
     box-sizing: border-box;
 }
 
+// Mixins
+@mixin flexCenterXandY {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 // Colors
 $primary-backogrund-color: #0F162D;
 $secondary-background-color: #FFFFFF;
@@ -27,7 +34,6 @@ body {
     background-color: $primary-backogrund-color;
     color: $secondary-background-color;
     font-size: 16px;
-
 }
 .section-container {
     width: 100%;
@@ -56,40 +62,48 @@ body {
 .right-column {
     .boxes {
         margin-top: 24px;
-        
-        .box {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 16px;
-            max-width: 100%;
-            height: 196px;
-            border-radius: 20px;
-            background-color: $boxBackground;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}
 
-            &__icon{
-                width: 28px;
-                height: 28px;
-                // chyba trzeba icon dac w container żeby dostać bacground z border radius
-                border-radius: 14px;
-                background-color: $iconBackground;
-            }
-            &__title {
-                font-size: 20px;
-                line-height: 24px;
-                font-weight: 500;
-            }
-        }
+.box {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    max-width: 100%;
+    height: 196px;
+    border-radius: 20px;
+    background-color: $boxBackground;
+    
+
+    &__icon{
+        @include flexCenterXandY;
+        width: 56px;
+        height: 56px;
+        // chyba trzeba icon dac w container żeby dostać bacground z border radius
+        border-radius: 14px;
+        background-color: $iconBackground;
+    }
+    &__title {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 500;
+        text-align: center;
+    }
+    &__text {
+        text-align: center;
+        color: $secondary-background-color;
     }
 }
 
 @media (min-width: 768px) {
-    .section {
-        padding: 159px 152px;
-    }
     .section-container {
-        flex-direction: row;
+        width: 496px;
     }
     .left-column {
         max-width: 467px;
@@ -104,5 +118,15 @@ body {
             font-weight: $fontMedium;
             margin-top: 16px;
         }
+    }
+    .right-column {
+        .boxes {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+    .box {
+        max-width: 240px;
+        height: 218px;
     }
 }
