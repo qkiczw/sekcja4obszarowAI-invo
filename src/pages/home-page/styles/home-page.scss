@@ -62,8 +62,11 @@ body {
 .right-column {
     .boxes {
         margin-top: 24px;
-        display: flex;
-        flex-direction: column;
+        // display: flex;
+        // flex-direction: column;
+        // gap: 16px;
+        display: grid;
+        grid-template-columns: 1fr;
         gap: 16px;
     }
 }
@@ -128,8 +131,7 @@ body {
     .right-column {
         width: 496px;
         .boxes {
-            flex-direction: row;
-            flex-wrap: wrap;
+            grid-template-columns: repeat(2, 1fr);
         }
     }
     .box {
@@ -151,6 +153,7 @@ body {
         width: 560px;
         .boxes{
             margin-top: 0;
+            gap: 31px 24px;
         }
     }
     .box {
